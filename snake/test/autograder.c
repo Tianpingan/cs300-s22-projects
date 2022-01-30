@@ -148,13 +148,15 @@ int main(int argc, char **argv) {
                 "    \"board_error\": \"%s\"\n"
                 "}\n",
                 msg);
-        return 0;
+        teardown(&final_game_state);
+        exit(EXIT_SUCCESS);
     }
 
     char *cell_string = (char *)malloc(
         final_game_state.board->width * final_game_state.board->height + 1);
     if (cell_string == NULL) {
         fprintf(stderr, "Failed to allocate memory for cell string\n");
+        teardown(&final_game_state);
         exit(EXIT_FAILURE);
     }
     for (size_t i = 0; i < final_game_state.board->height; i++) {
@@ -227,10 +229,7 @@ int main(int argc, char **argv) {
                 cell_string);
     }
 
-    if (final_game_state.game_over == 0) {
-        teardown(&final_game_state);
-    }
-
+    teardown(&final_game_state);
     free(cell_string);
     fclose(pipe);
     exit(EXIT_SUCCESS);
