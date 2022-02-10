@@ -158,8 +158,8 @@ def run_test(test_name, test_parameters):
         ],
         close_fds=False,
         input=(
-            test_parameters.get("name", "") + " "
-        ).encode(),  # HACK: no clue why it cuts one short?
+            test_parameters.get("name", "") + "\n"
+        ).encode(),
     )
     if results.returncode != 0:
         results.returncode
