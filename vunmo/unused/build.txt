@@ -1,0 +1,2 @@
+# note: don't delete -- need for stencil modification purposes
+-std=gnu++17 -W -Wall -Wshadow -g -Wno-unused-result -Wno-unused-parameter -Wno-unused-variable -Werror $(O)
