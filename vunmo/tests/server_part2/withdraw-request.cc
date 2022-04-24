@@ -23,6 +23,8 @@ int main() {
         return 1;
     }
 
+    usleep(100000);
+
     response_t resp;
     if (client.deposit(DEPOSIT_AMOUNT, &resp) < 0) {
         fprintf(stderr, "Client failed to send a deposit request.\n");

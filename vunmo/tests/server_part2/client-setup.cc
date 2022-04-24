@@ -24,6 +24,8 @@ int main() {
         return 1;
     }
 
+    usleep(100000);
+
     response_t resp;
     client.get_balance(&resp);
     if (!resp.success) {

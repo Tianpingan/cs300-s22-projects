@@ -29,6 +29,8 @@ int main() {
         return 1;
     }
 
+    usleep(100000);
+
     response_t resp;
     // Deposit DEPOSIT_AMOUNT amount of money into target client's account
     if (target_client.deposit(DEPOSIT_AMOUNT, &resp) < 0) {

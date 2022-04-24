@@ -23,6 +23,8 @@ int main() {
         return 1;
     }
 
+    usleep(100000);
+
     response_t resp;
     // Try charging a nonexistent target client CHARGE_AMOUNT amount of money. This should fail.
     if(client.charge(TARGET_CLIENT_ID, CHARGE_AMOUNT, &resp) < 0) {

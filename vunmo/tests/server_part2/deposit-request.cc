@@ -21,6 +21,8 @@ int main() {
         return 1;
     }
 
+    usleep(100000);
+
     response_t resp; // not used
     if (client.deposit(DEPOSIT_AMOUNT, &resp) < 0) {
         fprintf(stderr, "Client failed to deposit properly.\n");

@@ -75,8 +75,13 @@ int main() {
             continue;
         }
         clients[i] = c;
+    }
+
+    usleep(100000);
+
+    for (int i = 0; i < NUM_CLIENTS; i++) {
         response_t resp;
-        c->deposit(INITIAL_DEPOSIT, &resp);
+        clients[i]->deposit(INITIAL_DEPOSIT, &resp);
     }
 
     // Spawn a thread per client, each running the interactions function.
